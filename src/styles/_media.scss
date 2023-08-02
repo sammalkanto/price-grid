@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+    #root {
+        height: auto;
+    }
+
+    .card {
+        max-width: 500px;
+        margin: 64px 24px;
+
+        > .section {
+            border-radius: $common-radius $common-radius 0 0;
+            padding: calc($common-padding / 1.5);
+            gap: 24px;
+
+            .title {
+                font-size: 1.4rem;
+            }
+
+            .sub-title {
+                font-size: 1.1rem;
+            }
+
+            .description {
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        > .section-container {
+            flex-direction: column;
+            border-radius: 0;
+
+            > .section:nth-child(1) {
+                border-radius: 0;
+                padding: calc($common-padding / 1.5);
+            }
+
+            > .section:nth-child(2) {
+                padding: calc($common-padding / 1.5);
+                border-radius: 0 0 $common-radius $common-radius;
+            }
+        }
+    }
+}

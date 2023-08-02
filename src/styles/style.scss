@@ -1,0 +1,139 @@
+@import 'config.scss';
+
+body {
+    height: 100vh;
+    background: $lightGray;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    border-radius: $common-radius;
+    max-width: $common-width;
+    width: 100%;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.1);
+
+    > .section {
+        padding: $common-padding;
+        background: white;
+        border-radius: $common-radius $common-radius 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .title {
+            color: $cyan;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .sub-title {
+            color: $brightYellow;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .description {
+            color: $grayishBlue;
+            line-height: 1.6rem;
+        }
+    }
+
+    > .section-container {
+        display: flex;
+
+        > .section {
+            width: 100%;
+            max-width: $common-width;
+        }
+
+        > .section:nth-child(1) {
+            background: $cyan;
+            border-radius: 0 0 0 $common-radius;
+            padding: $common-padding;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 16px;
+
+            > .box {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                > .title {
+                    font-size: 1.5rem;
+                    color: white;
+                }
+
+                > .subscription {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    > .price {
+                        font-size: 2rem;
+                        color: white;
+                        font-weight: 700;
+                    }
+
+                    > .period {
+                        color: $lightGray;
+                    }
+                }
+
+                > .description {
+                    color: $lightGray;
+                }
+            }
+
+            > .signup {
+                border-radius: 6px;
+                border: none;
+                background: $brightYellow;
+                padding: 16px 32px;
+                color: white;
+                font-size: 1rem;
+                box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+
+                &:hover {
+                    background: darken($brightYellow, 5%);
+                }
+            }
+        }
+
+        > .section:nth-child(2) {
+            background: lighten($cyan, 3%);
+            border-radius: 0 0 $common-radius 0;
+            padding: $common-padding;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            > .title {
+                font-size: 1.5rem;
+                color: white;
+            }
+
+            > ul {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                list-style: none;
+                > li {
+                    color: $lightGray;
+                }
+            }
+        }
+    }
+}
+
+
+@import 'media.scss';
